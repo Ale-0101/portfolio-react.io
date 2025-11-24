@@ -1,0 +1,387 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0e121b; /* Fundo escuro neutro */
+  color: #d1d1d1; /* Texto neutro claro */
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  background-color: #0e121b;
+  z-index: 10;
+  border-bottom: 1px solid #333; /* Borda neutra */
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: #888; /* Neutro retro */
+  cursor: default;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  font-size: 16px;
+  color: #d1d1d1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #929421ff; /* Destaque neutro */
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #888;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #0e121b;
+    height: 100vh;
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 40px;
+    width: 250px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Hero */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 0;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 540px;
+}
+
+.hero-text h1 {
+  font-weight: 700;
+  font-size: 48px;
+  margin-bottom: 12px;
+  color: #888; /* Destaque neutro retro */
+}
+
+.hero-text h2 {
+  font-weight: 600;
+  font-size: 30px;
+  color: #d1d1d1;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.button-primary,
+.button-secondary {
+  padding: 14px 28px;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  user-select: none;
+}
+
+.button-primary {
+  background-color: #888; /* Neutro retro */
+  color: #0e121b;
+}
+
+.button-primary:hover {
+  background-color: #929421ff; /* Destaque suave */
+}
+
+.button-secondary {
+  background-color: transparent;
+  color: #888;
+  border: 2px solid #888;
+}
+
+.button-secondary:hover {
+  background-color: #888;
+  color: #0e121b;
+}
+
+.hero-image img {
+  border-radius: 50%;
+  max-width: 320px;
+  width: 100%;
+  box-shadow: 0 0 70px #888; /* Sombra neutra retro */
+}
+
+/* About */
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-info {
+  max-width: 450px;
+}
+
+.about-info h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #d1d1d1;
+}
+
+.about-info p {
+  font-size: 16px;
+  color: #aaa; /* Neutro */
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.stats {
+  display: flex;
+  gap: 36px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-weight: 700;
+  font-size: 28px;
+  color: #888; /* Destaque neutro */
+  margin-bottom: 8px;
+}
+
+.stat p {
+  font-size: 14px;
+  color: #777; /* Neutro escuro */
+}
+
+/* Projects */
+
+.projects {
+  margin-top: 120px;
+}
+
+.projects h2 {
+  font-weight: 700;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #d1d1d1;
+  position: relative;
+  padding-left: 6px;
+}
+
+.projects h2::before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 80%;
+  left: 0;
+  top: 10%;
+  background-color: #888; /* Neutro retro */
+  border-radius: 6px;
+}
+
+.project-list {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Projeto cartão */
+
+.project-card {
+  background-color: #1a1a1a; /* Neutro escuro */
+  border: 4px solid #888; /* Borda neutra retro */
+  box-shadow:
+    2px 2px 0 #888,
+    4px 4px 0 #888;
+  border-radius: 0;
+  width: 280px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: box-shadow 0.1s;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  box-shadow:
+    0 0 0 3px #888,
+    4px 4px 0 #888,
+    6px 6px 0 #888;
+  outline: none;
+}
+
+.project-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 18px;
+  color: #888; /* Neutro retro */
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.project-description {
+  font-family: monospace, monospace;
+  font-size: 12px;
+  color: #aaa; /* Neutro */
+  flex-grow: 1;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.project-techs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tech-chip {
+  padding: 6px 14px;
+  background-color: #333; /* Neutro escuro */
+  border: 2px solid #888;
+  font-family: 'Press Start 2P', monospace;
+  font-weight: 700;
+  font-size: 10px;
+  color: #888;
+  border-radius: 0;
+  user-select: none;
+  transition: background-color 0.1s;
+}
+
+.tech-chip:hover {
+  background-color: #888;
+  color: #1a1a1a;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border: 3px solid #888;
+  color: #888;
+  font-family: 'Press Start 2P', monospace;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.1s;
+  user-select: none;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #888;
+  color: #1a1a1a;
+  outline: none;
+  box-shadow:
+    0 0 0 3px #888,
+    2px 2px 0 #888;
+}
+
+.btn-primary:focus {
+  outline: 3px solid #888;
+  outline-offset: 3px;
+}
+
+/* Footer */
+
+.footer {
+  margin-top: 150px;
+  padding: 30px 0;
+  border-top: 1px solid #333;
+  font-size: 14px;
+  color: #777; /* Neutro */
+  text-align: center;
+}
+
+/* Responsividade */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .hero-text, .hero-image {
+    max-width: 100%;
+  }
+  .about {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .about-info {
+    max-width: 100%;
+  }
+  .project-list {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
